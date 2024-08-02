@@ -2,21 +2,19 @@
 
 import { useState } from "react";
 import { CreatePostForm } from "./CreatePostForm";
-import {
-  Dialog,
-  DialogContent,
-} from "@mui/material";
+import { Dialog, DialogContent } from "@mui/material";
 
 export const CreatePost = () => {
   const [postFormOpen, setPostFormOpen] = useState(false);
+
   const handleOpenPostForm = () => {
     setPostFormOpen(true);
   };
 
   const handleClosePostForm = () => {
     setPostFormOpen(false);
-    //handle post logic here
   };
+
   return (
     <>
       <div className="flex bg-white shadow-lg rounded-lg mx-4 md:mx-auto max-w-md md:max-w-2xl">
@@ -31,11 +29,9 @@ export const CreatePost = () => {
               alt="avatar"
             />
             <span
-              className="flex-grow bg-gray-100 rounded border
-               border-gray-300 p-2
-               text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="flex-grow bg-gray-100 rounded border border-gray-300 p-2 text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
-              What's on your mind?
+              What&apos;s on your mind?
             </span>
           </div>
           {/* On smaller screens, show buttons in a column layout */}
@@ -58,7 +54,6 @@ export const CreatePost = () => {
         onClose={handleClosePostForm}
         aria-labelledby="create-post-dialog-title"
       >
-        
         <DialogContent>
           <CreatePostForm handleCreate={handleClosePostForm} />
         </DialogContent>
