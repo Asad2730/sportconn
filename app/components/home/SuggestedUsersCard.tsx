@@ -2,35 +2,13 @@
 
 import { peopleToFollow } from "@/app/temp/data";
 import React, { useState } from "react";
+import { isProfileVerified } from "./isVerified";
 
 export const SuggestedUsersCard = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const isProfileVerified = (isVerified: boolean) =>
-    isVerified ? (
-      <svg
-        className="w-5 h-5 inline text-green-600 ml-2"
-        fill="currentColor"
-        viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          fillRule="evenodd"
-          d="M6.293 9.293a1 1 0 011.414 0L10 10.586l2.293-2.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-          clipRule="evenodd"
-        />
-      </svg>
-    ) : (
-      <svg
-        className="w-5 h-5 inline text-green-600 ml-2"
-        fill="currentColor"
-        viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg"
-      />
-    );
-
   return (
-    <div className="divide-y divide-gradivy-200 overflow-hidden rounded-lg bg-white shadow">
+    <div className="divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow-md">
       <div className="px-4 py-5 sm:px-6">
         <div className="text-black font-bold text-xl mb-4 border-b-2 border-gray-200 pb-2">
           You Should Follow
@@ -42,27 +20,27 @@ export const SuggestedUsersCard = () => {
           .map((item) => (
             <div
               key={item.id}
-              className="flex flex-row bg-gray-100 rounded-lg shadow-sm items-center mb-5"
+              className="flex flex-col sm:flex-row bg-gray-100 rounded-lg shadow-sm items-start sm:items-center mb-5"
             >
               {/* Profile Picture */}
               <img
                 src={item.profileUrl}
                 alt="Profile"
-                className="w-10 h-10 rounded-full object-cover"
+                className="w-12 h-12 sm:w-10 sm:h-10 rounded-full object-cover mb-2 sm:mb-0"
               />
 
               {/* User Info */}
-              <div className="mr-4">
-                <div className="flex items-center text-sm font-bold text-black">
+              <div className="flex-1 sm:ml-4">
+                <div className="flex items-center sm:text-sm font-bold text-black flex-shrink">
                   {item.name} {isProfileVerified(item.isVerified)}
                 </div>
-                <div className="text-xs text-gray-700">
+                <div className="text-xs text-gray-700 flex-shrink">
                   {item.email.split("@")[0]}@
                 </div>
               </div>
 
               {/* Follow Button */}
-              <button className="max-w-sm bg-black text-white px-2 py-1 rounded hover:bg-gray-800">
+              <button className="bg-black text-white px-3 py-1 rounded hover:bg-gray-800 mt-2 sm:mt-0">
                 Follow
               </button>
             </div>
