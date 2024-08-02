@@ -15,7 +15,7 @@ export default function Auth() {
            
           
           <div className="w-full  mb-4">
-              <img src="/01.jpg" alt="logo" className="w-full max-h-32 "/>
+              <img src="/03.jpg" alt="logo" className="w-full max-h-32 bg-transparent"/>
           </div>
 
           <div className="w-full font-bold flex items-center justify-center text-white mb-4">

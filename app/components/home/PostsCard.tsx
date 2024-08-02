@@ -4,6 +4,13 @@ import { CommentsSectinCard, CommentProps } from "./CommentSectinCard";
 import { isProfileVerified } from "./isVerified";
 import { useState } from "react";
 import { Menu, MenuItem, IconButton, Tooltip } from "@mui/material";
+import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
+import ContentPasteOutlinedIcon from "@mui/icons-material/ContentPasteOutlined";
+import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
+import ShareIcon from "@mui/icons-material/Share";
+import PersonRemoveAlt1OutlinedIcon from "@mui/icons-material/PersonRemoveAlt1Outlined";
+import PersonOffOutlinedIcon from "@mui/icons-material/PersonOffOutlined";
+import OutlinedFlagOutlinedIcon from "@mui/icons-material/OutlinedFlagOutlined";
 
 interface PostCardProps {
   name: string;
@@ -128,11 +135,34 @@ export const PostsCard = ({
             "aria-labelledby": "post-card-menu-button",
           }}
         >
-          <MenuItem onClick={handleClose}>Edit</MenuItem>
-          <MenuItem onClick={handleClose}>Copy/Paste Link</MenuItem>
-          <MenuItem onClick={handleClose}>Marilyn's View</MenuItem>
-          <MenuItem onClick={handleClose}>Unfollow/Disconnect</MenuItem>
-          <MenuItem onClick={handleClose}>Report</MenuItem>
+          <MenuItem onClick={handleClose}>
+            <EditOutlinedIcon />
+            Edit
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <ContentPasteOutlinedIcon />
+            Copy/Paste Link
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <RemoveRedEyeIcon />
+            Marilyn View
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <ShareIcon />
+            Share Profile
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <PersonRemoveAlt1OutlinedIcon />
+            Unfollow
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <PersonOffOutlinedIcon />
+            Disconnect
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <OutlinedFlagOutlinedIcon />
+            Report
+          </MenuItem>
         </Menu>
       </div>
     </div>
