@@ -20,7 +20,7 @@ export const SuggestedUsersCard = () => {
           .map((item) => (
             <div
               key={item.id}
-              className="flex flex-col sm:flex-row bg-gray-100 rounded-lg shadow-sm items-start sm:items-center mb-5"
+              className="flex flex-col sm:flex-row  rounded-lg shadow-sm items-start sm:items-center mb-5"
             >
               {/* Profile Picture */}
               <img
